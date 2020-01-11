@@ -24,3 +24,8 @@
   -- Serverside file management/ permission control for sharing.
 
 - TODO: Select project based on candidates and write abstract (1/2 pg max) to hand in next lecture (2020.01.15).
+
+2020.01.11 Project topic decision
+- Held offline vote, agreed on news app.
+
+- TODO: Write abstract (1/2 pg max) to hand in next lecture (2020.01.15)
