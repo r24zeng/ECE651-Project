@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Taaza Khabar</string>
+    <string name="headlines">Headlines</string>
+    <string name="search">Search</string>
+    <string name="favourite">Favourite</string>
+    <string name="published_at">Published At:</string>
+    <string name="source">Source</string>
+    <string name="button_read_full_story">Read full story</string>
+    <string name="google_news_india">Google News (India)</string>
+    <string name="the_hindu">The Hindu</string>
+    <string name="the_times_of_india">The Times of India</string>
+    <string name="choose_the_news_sources">Choose the News Sources!</string>
+    <string name="order_by_time">Order By Time?</string>
+    <string name="no_search_results">No Search Results</string>
+    <string name="category">Category</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
