@@ -1,0 +1,4 @@
+[submodule "server"]
+	path = server
+	url = git@github.com:faushine/ECE651-Project-Back-end.git
+
