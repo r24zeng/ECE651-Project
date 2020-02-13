@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "ad599e62-e211-4d68-878e-3bcfd538343b",
+		"name": "ece651_remote",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"alice\",\n\t\"password\": \"alice\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "66.112.218.89:5000/api/v1/login",
+					"host": [
+						"66",
+						"112",
+						"218",
+						"89"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"mike\",\n\t\"password\": \"mike\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "66.112.218.89:5000/api/v1/users",
+					"host": [
+						"66",
+						"112",
+						"218",
+						"89"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user info",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzUxMiIsImlhdCI6MTU4MDYyMTMzNywiZXhwIjoxNTgwNjI0OTM3fQ.eyJpZCI6Mn0.twY28Gkkg29VHXvCUFHLDcSptJK2oD0VwGnYAE4_7L1MvwfqsyZSjlPINBMgNq0f-YCaCbRcIfazmOf7-jxICA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "66.112.218.89:5000/api/v1/users/2",
+					"host": [
+						"66",
+						"112",
+						"218",
+						"89"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "change user info",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzUxMiIsImlhdCI6MTU4MDYyMjQ0MSwiZXhwIjoxNTgwNjI2MDQxfQ.eyJpZCI6Mn0.f_rNdpqPIOe7WnAwYYXbn7aylOtHmIW7pRVqn11CbsJoZqFWhzhWYOqURLmsZJQHa697D0gmrmpJeQNghquQ5Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Alice Gold\",\n\t\"gender\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "66.112.218.89:5000/api/v1/users/2",
+					"host": [
+						"66",
+						"112",
+						"218",
+						"89"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
