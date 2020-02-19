@@ -10,6 +10,7 @@ import ca.uwaterloo.newsapp.ui.news.NewsActivity;
 import ca.uwaterloo.newsapp.utils.ACache;
 import ca.uwaterloo.newsapp.utils.Globals;
 
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void isLogin(){
         String userNameCache = ACache.get(this).getAsString(Globals.USERNAME_KEY);
-        startActivity(new Intent(this, LoginActivity.class));
+//        startActivity(new Intent(this, LoginActivity.class));
         if (userNameCache==null){
             startActivity(new Intent(this,LoginActivity.class));
         }else {

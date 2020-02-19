@@ -18,6 +18,11 @@
     <string name="no_search_results">No Search Results</string>
     <string name="category">Category</string>
 
+<!--    user account-->
+    <string name="account">Account</string>
+    <string name="accountInfo">Account information</string>
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
