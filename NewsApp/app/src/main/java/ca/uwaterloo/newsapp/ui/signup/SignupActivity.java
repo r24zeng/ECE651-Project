@@ -76,6 +76,7 @@ public class SignupActivity extends AppCompatActivity {
     public void signup() throws IOException, JSONException {
         Log.d(TAG, "Signup");
 
+        // TODO: 2020-02-21 validate user input
 //        if (!validate()) {
 //            onSignupFailed();
 //            return;
