@@ -1,5 +1,7 @@
 package ca.uwaterloo.newsapp.utils;
 
+import android.util.Log;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -16,52 +18,58 @@ import okhttp3.Call;
 import okhttp3.Headers;
 
 
-
 public class HttpUtils {
     public static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
     private static final String host = "http:66.112.218.89:5000";
     OkHttpClient client = new OkHttpClient();
 
-    public ResponseBody post(String url, String json) throws IOException {
-        RequestBody body = RequestBody.create(JSON,json);
+    public ResponseBody post(String url, String json) {
+        RequestBody body = RequestBody.create(JSON, json);
         Request request = new Request.Builder()
-                .url(host+url)
+                .url(host + url)
                 .post(body)
                 .build();
-        try (Response response = client.newCall(request).execute()) {
-            ResponseBody responseBody = new ResponseBody(response.code(),response.body().string());
+        Response response = null;
+        try {
+            response = client.newCall(request).execute();
+            ResponseBody responseBody = new ResponseBody(response.code(), response.body().string());
             return responseBody;
-        }catch (IOException e){
-            return null;
+        } catch (IOException e) {
+            Log.d("post", "call execute failed", e);
+        } finally {
+            if (response != null) {
+                response.body().close();
+            }
         }
+        return null;
     }
 
 
-    public String get(String url, String token) throws IOException {
+    public String get(String url, String token) {
         String result = null;
         Response response = null;
         Request request = new Request.Builder()
-                .url(host+url)
+                .url(host + url)
                 .headers(SetHeaders(token))
                 .build();
         Call call = client.newCall(request);
         try {
-             response = call.execute();
-            if(response.code() == HttpCode.SUCCESS){
+            response = call.execute();
+            if (response.code() == HttpCode.SUCCESS) {
                 String string = response.body().string();
                 JSONObject object = null;
                 try {
                     object = new JSONObject(string);
                     result = object.getString("username");
                 } catch (JSONException e) {
-                    e.printStackTrace();
+                    Log.d("get", "convert json failed", e);
                 }
 
             }
-        } catch (Exception e) {
-            return null;
-        }finally {
-            if(response != null){
+        } catch (IOException e) {
+            Log.d("get", "call execute failed", e);
+        } finally {
+            if (response != null) {
                 response.body().close();
             }
         }
@@ -78,10 +86,10 @@ public class HttpUtils {
 
 
     public static void main(String[] args) throws IOException {
-        User user = new User("alice","alice");
+        User user = new User("alice", "alice");
         String b = JsonUtil.toJson(user);
         HttpUtils httpUtils = new HttpUtils();
-        ResponseBody r = httpUtils.post("/api/v1/login",b);
+        ResponseBody r = httpUtils.post("/api/v1/login", b);
         System.out.println(r.getBody());
 
     }
