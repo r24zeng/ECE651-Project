@@ -1,0 +1,74 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="ca.uwaterloo.newsapp"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="15"
+8-->C:\AllGitRepo\andodio\651\ECE651-Project\NewsApp\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="27" />
+9-->C:\AllGitRepo\andodio\651\ECE651-Project\NewsApp\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\AllGitRepo\andodio\651\ECE651-Project\NewsApp\app\src\main\AndroidManifest.xml:4:5-67
+11-->C:\AllGitRepo\andodio\651\ECE651-Project\NewsApp\app\src\main\AndroidManifest.xml:4:22-64
+12
+13    <application
+13-->C:\AllGitRepo\andodio\651\ECE651-Project\NewsApp\app\src\main\AndroidManifest.xml:5:5-20:19
+14        android:allowBackup="true"
+14-->C:\AllGitRepo\andodio\651\ECE651-Project\NewsApp\app\src\main\AndroidManifest.xml:6:9-35
+15        android:debuggable="true"
+16        android:icon="@mipmap/ic_launcher"
+16-->C:\AllGitRepo\andodio\651\ECE651-Project\NewsApp\app\src\main\AndroidManifest.xml:7:9-43
+17        android:label="@string/app_name"
+17-->C:\AllGitRepo\andodio\651\ECE651-Project\NewsApp\app\src\main\AndroidManifest.xml:8:9-41
+18        android:testOnly="true"
+19        android:theme="@style/AppTheme" >
+19-->C:\AllGitRepo\andodio\651\ECE651-Project\NewsApp\app\src\main\AndroidManifest.xml:9:9-40
+20        <activity android:name="ca.uwaterloo.newsapp.MainActivity" >
+20-->C:\AllGitRepo\andodio\651\ECE651-Project\NewsApp\app\src\main\AndroidManifest.xml:10:9-16:20
+20-->C:\AllGitRepo\andodio\651\ECE651-Project\NewsApp\app\src\main\AndroidManifest.xml:10:19-47
+21            <intent-filter>
+21-->C:\AllGitRepo\andodio\651\ECE651-Project\NewsApp\app\src\main\AndroidManifest.xml:11:13-15:29
+22                <action android:name="android.intent.action.MAIN" />
+22-->C:\AllGitRepo\andodio\651\ECE651-Project\NewsApp\app\src\main\AndroidManifest.xml:12:17-69
+22-->C:\AllGitRepo\andodio\651\ECE651-Project\NewsApp\app\src\main\AndroidManifest.xml:12:25-66
+23
+24                <category android:name="android.intent.category.LAUNCHER" />
+24-->C:\AllGitRepo\andodio\651\ECE651-Project\NewsApp\app\src\main\AndroidManifest.xml:14:17-77
+24-->C:\AllGitRepo\andodio\651\ECE651-Project\NewsApp\app\src\main\AndroidManifest.xml:14:27-74
+25            </intent-filter>
+26        </activity>
+27        <activity
+27-->C:\AllGitRepo\andodio\651\ECE651-Project\NewsApp\app\src\main\AndroidManifest.xml:17:9-117
+28            android:name="ca.uwaterloo.newsapp.ui.login.LoginActivity"
+28-->C:\AllGitRepo\andodio\651\ECE651-Project\NewsApp\app\src\main\AndroidManifest.xml:17:19-77
+29            android:theme="@style/AppTheme.Dark" />
+29-->C:\AllGitRepo\andodio\651\ECE651-Project\NewsApp\app\src\main\AndroidManifest.xml:17:78-114
+30        <activity
+30-->C:\AllGitRepo\andodio\651\ECE651-Project\NewsApp\app\src\main\AndroidManifest.xml:18:9-119
+31            android:name="ca.uwaterloo.newsapp.ui.signup.SignupActivity"
+31-->C:\AllGitRepo\andodio\651\ECE651-Project\NewsApp\app\src\main\AndroidManifest.xml:18:19-79
+32            android:theme="@style/AppTheme.Dark" />
+32-->C:\AllGitRepo\andodio\651\ECE651-Project\NewsApp\app\src\main\AndroidManifest.xml:18:80-116
+33        <activity
+33-->C:\AllGitRepo\andodio\651\ECE651-Project\NewsApp\app\src\main\AndroidManifest.xml:19:9-115
+34            android:name="ca.uwaterloo.newsapp.ui.news.NewsActivity"
+34-->C:\AllGitRepo\andodio\651\ECE651-Project\NewsApp\app\src\main\AndroidManifest.xml:19:19-75
+35            android:theme="@style/AppTheme.Dark" />
+35-->C:\AllGitRepo\andodio\651\ECE651-Project\NewsApp\app\src\main\AndroidManifest.xml:19:76-112
+36
+37        <provider
+37-->[android.arch.lifecycle:extensions:1.1.1] C:\Users\quany\.gradle\caches\transforms-2\files-2.1\dd51f51a756baaff7a81d412e9a23414\extensions-1.1.1\AndroidManifest.xml:23:9-27:43
+38            android:name="android.arch.lifecycle.ProcessLifecycleOwnerInitializer"
+38-->[android.arch.lifecycle:extensions:1.1.1] C:\Users\quany\.gradle\caches\transforms-2\files-2.1\dd51f51a756baaff7a81d412e9a23414\extensions-1.1.1\AndroidManifest.xml:24:13-83
+39            android:authorities="ca.uwaterloo.newsapp.lifecycle-trojan"
+39-->[android.arch.lifecycle:extensions:1.1.1] C:\Users\quany\.gradle\caches\transforms-2\files-2.1\dd51f51a756baaff7a81d412e9a23414\extensions-1.1.1\AndroidManifest.xml:25:13-68
+40            android:exported="false"
+40-->[android.arch.lifecycle:extensions:1.1.1] C:\Users\quany\.gradle\caches\transforms-2\files-2.1\dd51f51a756baaff7a81d412e9a23414\extensions-1.1.1\AndroidManifest.xml:26:13-37
+41            android:multiprocess="true" />
+41-->[android.arch.lifecycle:extensions:1.1.1] C:\Users\quany\.gradle\caches\transforms-2\files-2.1\dd51f51a756baaff7a81d412e9a23414\extensions-1.1.1\AndroidManifest.xml:27:13-40
+42    </application>
+43
+44</manifest>
