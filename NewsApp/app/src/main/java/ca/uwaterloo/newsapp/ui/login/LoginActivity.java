@@ -101,7 +101,12 @@ public class LoginActivity extends AppCompatActivity {
             onLoginFailed();
         } else if (response.getCode() == HttpCode.SUCCESS) {
             JSONObject jsonObject = new JSONObject(response.getBody());
-            onLoginSuccess(jsonObject.getString("token"));
+
+//            System.out.println("%%%%%%%%%%%%    "+jsonObject.getString("token")+"          $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+//            System.out.println("%%%%%%%%%%%%    "+jsonObject.getInt("id")+"          $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+
+
+            onLoginSuccess(jsonObject.getString("token"),jsonObject.getInt("id"));
             Intent intent = new Intent(getApplicationContext(), NewsActivity.class);
             startActivity(intent);
         }
@@ -125,9 +130,15 @@ public class LoginActivity extends AppCompatActivity {
         moveTaskToBack(true);
     }
 
-    public void onLoginSuccess(String token) {
+    public void onLoginSuccess(String token, int id) {
         Toast.makeText(getBaseContext(), "Login success", Toast.LENGTH_LONG).show();
         ACache.get(this).put("token",token,TIME_DAY*7);
+        ACache.get(this).put("id",id,TIME_DAY*7);
+//        System.out.println("%%%%%%%%%%%%    "+ACache.get(this).getAsString("token")+"          $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+//        System.out.println("###########   "+ACache.get(this).getAsObject("id")+"          $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+//        System.out.println("###@@@@@@@@@@@###   "+(int)ACache.get(this).getAsObject("id")+"          $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+
+
         _loginButton.setEnabled(true);
         finish();
     }
