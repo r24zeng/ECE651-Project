@@ -45,8 +45,8 @@ public class HttpUtils {
     }
 
 
-    public String get(String url, String token) {
-        String result = null;
+    public User get(String url, String token) {
+        User result = new User();
         Response response = null;
         Request request = new Request.Builder()
                 .url(host + url)
@@ -60,7 +60,13 @@ public class HttpUtils {
                 JSONObject object = null;
                 try {
                     object = new JSONObject(string);
-                    result = object.getString("username");
+                    System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+                    System.out.println(object);
+                    result.setUsername( object.getString("username"));
+                    result.setDepartment( object.getString("department"));
+                    result.setFaculty(object.getString("faculty"));
+                    result.setGender(object.getInt("gender"));
+                    result.setName(object.getString("name"));
                 } catch (JSONException e) {
                     Log.d("get", "convert json failed", e);
                 }
