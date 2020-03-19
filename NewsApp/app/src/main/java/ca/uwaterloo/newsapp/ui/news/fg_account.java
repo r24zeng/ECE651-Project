@@ -28,11 +28,7 @@ public class fg_account extends Fragment {
         int id = (int)ACache.get(this.getActivity()).getAsObject("id");
         HttpUtils httpUtils = new HttpUtils();
 
-        try {
-            user_name =httpUtils.get("/api/v1/users/" + id, token) ;
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        user_name =httpUtils.get("/api/v1/users/" + id, token) ;
 
         View view = inflater.inflate(R.layout.fg_account, container, false);
         _username =(TextView)view.findViewById(R.id.user_name);
