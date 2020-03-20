@@ -8,6 +8,7 @@ public class User {
     private String following;
     private int gender;
     private String name;
+    private int id;
 
 
     public User(String username, String password) {
@@ -18,8 +19,6 @@ public class User {
     public User(){
 
     }
-
-
 
     public String getUsername() {
         return username;
@@ -47,6 +46,14 @@ public class User {
 
     public int getGender() {
         return gender;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setGender(int gender) {

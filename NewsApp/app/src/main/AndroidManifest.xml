@@ -17,6 +17,7 @@
         <activity android:name="ca.uwaterloo.newsapp.ui.login.LoginActivity" android:theme="@style/AppTheme.Dark" />
         <activity android:name="ca.uwaterloo.newsapp.ui.signup.SignupActivity" android:theme="@style/AppTheme.Dark" />
         <activity android:name="ca.uwaterloo.newsapp.ui.news.NewsActivity" android:theme="@style/AppTheme.Dark" />
+        <activity android:name="ca.uwaterloo.newsapp.ui.news.edit_profile" android:theme="@style/AppTheme.Dark" />
     </application>
 
 </manifest>

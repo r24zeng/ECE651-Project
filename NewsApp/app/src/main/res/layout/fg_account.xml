@@ -7,14 +7,14 @@
     <ImageView
         android:id="@+id/h_back"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="230dp"
         android:scaleType="fitXY"
         android:src="@drawable/account_bg" />
 
     <ImageView
         android:id="@+id/h_head"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="50dp"
         android:layout_centerHorizontal="true"
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@id/h_back"
         android:orientation="horizontal"
-        android:layout_marginBottom="20dp">
+        android:layout_marginBottom="30dp">
 
         <ImageView
             android:id="@+id/user_line"
@@ -40,7 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toLeftOf="@id/user_line"
-            android:textSize="17sp"
+            android:textSize="18sp"
             android:textColor="@color/white"
             android:text="@string/user_name"/>
 
@@ -49,7 +49,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
-            android:textSize="17sp"
+            android:textSize="18sp"
             android:textColor="@color/white"
             android:layout_toRightOf="@id/user_line"
             android:text="@string/mobile_num"/>
@@ -60,23 +60,31 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="210dp">
+        android:layout_marginTop="235dp">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
+        <Button
+            android:id="@+id/btn_editProfile"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="200dp"
+            android:layout_marginBottom="24dp"
+            android:padding="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Edit Profile"
+            />
+
     </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="210dp">
 
-        
 
-    </RelativeLayout>
+
+
 
 
 

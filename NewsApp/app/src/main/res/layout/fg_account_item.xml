@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
+    android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -8,8 +9,8 @@
         android:id="@+id/user_attr"
         android:layout_width="match_parent"
         android:gravity="left"
-        android:layout_height="40dp"
-        android:textSize="17sp"
+        android:layout_height="55dp"
+        android:textSize="20sp"
         android:textColor="@color/white"
         android:layout_weight="1"/>
 
@@ -17,8 +18,8 @@
         android:id="@+id/user_attrinfo"
         android:layout_width="match_parent"
         android:gravity="right"
-        android:layout_height="40dp"
-        android:textSize="17sp"
+        android:layout_height="55dp"
+        android:textSize="20sp"
         android:textColor="@color/white"
         android:layout_weight="1"/>
 
