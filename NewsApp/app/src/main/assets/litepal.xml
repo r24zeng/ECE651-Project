@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<litepal>-->
+<!--    &lt;!&ndash;指定数据库名&ndash;&gt;-->
+<!--    <dbname value="newsApp"></dbname>-->
+
+<!--    &lt;!&ndash;用于指定数据库版本号&ndash;&gt;-->
+<!--    <version value="11" ></version>-->
+
+<!--    &lt;!&ndash;用于指定所有的映射模型列表,声明要配置的映射模型类，注意一定要使用完整的类名&ndash;&gt;-->
+<!--    <list>-->
+<!--        <mapping class="ca.uwaterloo.newsapp.ui.news.NewsInfoBean"></mapping>-->
+<!--    </list>-->
+<!--</litepal>-->
