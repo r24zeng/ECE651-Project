@@ -14,9 +14,9 @@ public class FragmentAdapter extends FragmentPagerAdapter {
         super(fm);
         List<Fragment> fragments = new ArrayList<>();
         fragments.add(new NewsFragment());
-        fragments.add(new fg_search());
-        fragments.add(new fg_favorite());
-        fragments.add(new fg_account());
+        fragments.add(new SearchFragment());
+        fragments.add(new FavoriteFragment());
+        fragments.add(new AccountFragment());
         this.mFragments = fragments;
     }
 
