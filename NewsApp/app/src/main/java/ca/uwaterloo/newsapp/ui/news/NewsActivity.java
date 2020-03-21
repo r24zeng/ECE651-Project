@@ -3,21 +3,15 @@ package ca.uwaterloo.newsapp.ui.news;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import ca.uwaterloo.newsapp.R;
 
 public class NewsActivity  extends AppCompatActivity {
     BottomNavigationView bnView;
     ViewPager viewPager;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,14 +21,7 @@ public class NewsActivity  extends AppCompatActivity {
         bnView = findViewById(R.id.navigation);
         viewPager = findViewById(R.id.vp);
 
-
-        List<Fragment> fragments = new ArrayList<>();
-        fragments.add(new fg_headline());
-        fragments.add(new fg_search());
-        fragments.add(new fg_favorite());
-        fragments.add(new fg_account());
-
-        FragmentAdapter adapter = new FragmentAdapter(fragments, getSupportFragmentManager());
+        FragmentAdapter adapter = new FragmentAdapter(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
 
         //BottomNavigationView 点击事件监听
@@ -81,9 +68,9 @@ public class NewsActivity  extends AppCompatActivity {
         });
 
 
-
-
-
-
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
     }
 }

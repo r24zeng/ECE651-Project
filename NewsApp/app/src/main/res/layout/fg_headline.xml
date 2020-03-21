@@ -1,13 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="@string/hello_world"
-        android:textSize="22sp" />
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal">
+    <!--自定义标题栏-->
+    <android.support.v4.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        app:titleTextColor="@color/colorWhite"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        />
+
+<!--    &lt;!&ndash;横向标签显示布局&ndash;&gt;-->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:tabMode="scrollable"
+        app:tabSelectedTextColor="#FF0000"
+        app:tabTextColor="#000000">
+    </com.google.android.material.tabs.TabLayout>
+
+<!--    &lt;!&ndash;&ndash;&gt;-->
+    <android.support.v4.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v4.viewpager.widget.ViewPager>
 
 
 </LinearLayout>

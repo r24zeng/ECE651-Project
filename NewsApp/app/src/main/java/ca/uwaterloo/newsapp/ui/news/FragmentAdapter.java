@@ -4,13 +4,19 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class FragmentAdapter extends FragmentPagerAdapter {
     private List<Fragment> mFragments;
 
-    public FragmentAdapter(List<Fragment> fragments, FragmentManager fm) {
+    public FragmentAdapter(FragmentManager fm) {
         super(fm);
+        List<Fragment> fragments = new ArrayList<>();
+        fragments.add(new NewsFragment());
+        fragments.add(new fg_search());
+        fragments.add(new fg_favorite());
+        fragments.add(new fg_account());
         this.mFragments = fragments;
     }
 

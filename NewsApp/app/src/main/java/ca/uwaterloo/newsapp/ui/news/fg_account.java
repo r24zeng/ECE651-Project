@@ -23,17 +23,17 @@ public class fg_account extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        Log.e(TAG, "begin on onCreateView");
-        String token = ACache.get(this.getActivity()).getAsString("token");
-        int id = (int)ACache.get(this.getActivity()).getAsObject("id");
-        HttpUtils httpUtils = new HttpUtils();
-
-        user_name =httpUtils.get("/api/v1/users/" + id, token) ;
-
+//        Log.e(TAG, "begin on onCreateView");
+//        String token = ACache.get(this.getActivity()).getAsString("token");
+//        int id = (int)ACache.get(this.getActivity()).getAsObject("id");
+//        HttpUtils httpUtils = new HttpUtils();
+//
+//        user_name =httpUtils.get("/api/v1/users/" + id, token) ;
+//
         View view = inflater.inflate(R.layout.fg_account, container, false);
-        _username =(TextView)view.findViewById(R.id.user_name);
-        _username.setText(user_name);
-//        System.out.println("########************************#########"+user_name+"&&&&&&&&&&&&&&&");
+//        _username =(TextView)view.findViewById(R.id.user_name);
+//        _username.setText(user_name);
+////        System.out.println("########************************#########"+user_name+"&&&&&&&&&&&&&&&");
         return view;
     }
 
