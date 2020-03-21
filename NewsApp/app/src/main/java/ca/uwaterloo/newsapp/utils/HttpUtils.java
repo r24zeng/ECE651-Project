@@ -59,8 +59,14 @@ public class HttpUtils {
     public List<News> getNews(String url) {
         List<News> result = new ArrayList<>();
         Response response = null;
+//        HttpUrl httpUrl = new HttpUrl.Builder()
+//                .scheme("http")
+//                .host(host)
+//                .addPathSegment(url)
+//                .addQueryParameter("page","1")
+//                .build();
         Request request = new Request.Builder()
-                .url(host + url)
+                .url(host+url)
                 .build();
         Call call = client.newCall(request);
         try {
@@ -86,12 +92,8 @@ public class HttpUtils {
     public User get(String url, String token) {
         User result = new User();
         Response response = null;
-        HttpUrl httpUrl = new HttpUrl.Builder()
-                .addQueryParameter("page","1")
-                .host(host + url)
-                .build();
         Request request = new Request.Builder()
-                .url(httpUrl)
+                .url(host + url)
                 .headers(SetHeaders(token))
                 .build();
         Call call = client.newCall(request);
