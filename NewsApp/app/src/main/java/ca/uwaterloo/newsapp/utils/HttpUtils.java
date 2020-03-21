@@ -45,8 +45,8 @@ public class HttpUtils {
     }
 
 
-    public String get(String url, String token) {
-        String result = null;
+    public User get(String url, String token) {
+        User result = new User();
         Response response = null;
         Request request = new Request.Builder()
                 .url(host + url)
@@ -60,7 +60,13 @@ public class HttpUtils {
                 JSONObject object = null;
                 try {
                     object = new JSONObject(string);
-                    result = object.getString("username");
+                    System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+                    System.out.println(object);
+                    result.setUsername( object.getString("username"));
+                    result.setDepartment( object.getString("department"));
+                    result.setFaculty(object.getString("faculty"));
+                    result.setGender(object.getInt("gender"));
+                    result.setName(object.getString("name"));
                 } catch (JSONException e) {
                     Log.d("get", "convert json failed", e);
                 }
@@ -84,6 +90,30 @@ public class HttpUtils {
         return headers;
     }
 
+    public ResponseBody patch(String url, String json, String token) {
+        RequestBody body = RequestBody.create(JSON, json);
+        System.out.println("^^^^^^^^^^^^^^^^");
+        System.out.println(json);
+        Request request = new Request.Builder()
+                .url(host + url)
+                .headers(SetHeaders(token))
+                .patch(body)
+                .build();
+        Response response = null;
+        try {
+            response = client.newCall(request).execute();
+            ResponseBody responseBody = new ResponseBody(response.code(), response.body().string());
+            return responseBody;
+        } catch (IOException e) {
+            Log.d("patch", "call execute failed", e);
+        } finally {
+            if (response != null) {
+                response.body().close();
+            }
+        }
+        return null;
+    }
+
 
     public static void main(String[] args) throws IOException {
         User user = new User("alice", "alice");
@@ -91,6 +121,15 @@ public class HttpUtils {
         HttpUtils httpUtils = new HttpUtils();
         ResponseBody r = httpUtils.post("/api/v1/login", b);
         System.out.println(r.getBody());
+        String token ="eyJhbGciOiJIUzUxMiIsImlhdCI6MTU4NDc0MDgyMiwiZXhwIjoxNTg0NzQ0NDIyfQ.eyJpZCI6Mn0.IWqoIgB3_QzRzoKTynApiBUDlbZu8QmW0c0Z4O51axjMOWblBfwS-3OkHCgp2NZbq-v49b6xnBAplNIhld1YgQ";
+
+//        user =httpUtils.get("/api/v1/users/2", token) ;
+        user.setDepartment("CS");
+        ResponseBody r1 = httpUtils.patch("/api/v1/users/2", JsonUtil.toJson(user),token);
+        System.out.println(r1.getBody());
+
+
+
 
     }
 }

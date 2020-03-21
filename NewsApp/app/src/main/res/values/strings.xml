@@ -21,6 +21,8 @@
 <!--    user account-->
     <string name="account">Account</string>
     <string name="accountInfo">Account information</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
 
     <string name="user_name">Amy</string>
     <string name="mobile_num">12345678</string>

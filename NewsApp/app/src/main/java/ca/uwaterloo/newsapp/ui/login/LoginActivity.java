@@ -35,6 +35,7 @@ import static ca.uwaterloo.newsapp.utils.ACache.TIME_DAY;
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
     private static final int REQUEST_SIGNUP = 0;
+    String password;
 
     @BindView(R.id.input_email) EditText _emailText;
     @BindView(R.id.input_password) EditText _passwordText;
@@ -91,7 +92,7 @@ public class LoginActivity extends AppCompatActivity {
         progressDialog.show();
 
         String email = _emailText.getText().toString();
-        String password = _passwordText.getText().toString();
+        password = _passwordText.getText().toString();
         User user = new User(email, password);
 
         HttpUtils httpUtils = new HttpUtils();
@@ -101,10 +102,6 @@ public class LoginActivity extends AppCompatActivity {
             onLoginFailed();
         } else if (response.getCode() == HttpCode.SUCCESS) {
             JSONObject jsonObject = new JSONObject(response.getBody());
-
-//            System.out.println("%%%%%%%%%%%%    "+jsonObject.getString("token")+"          $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
-//            System.out.println("%%%%%%%%%%%%    "+jsonObject.getInt("id")+"          $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
-
 
             onLoginSuccess(jsonObject.getString("token"),jsonObject.getInt("id"));
             Intent intent = new Intent(getApplicationContext(), NewsActivity.class);
@@ -134,10 +131,7 @@ public class LoginActivity extends AppCompatActivity {
         Toast.makeText(getBaseContext(), "Login success", Toast.LENGTH_LONG).show();
         ACache.get(this).put("token",token,TIME_DAY*7);
         ACache.get(this).put("id",id,TIME_DAY*7);
-//        System.out.println("%%%%%%%%%%%%    "+ACache.get(this).getAsString("token")+"          $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
-//        System.out.println("###########   "+ACache.get(this).getAsObject("id")+"          $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
-//        System.out.println("###@@@@@@@@@@@###   "+(int)ACache.get(this).getAsObject("id")+"          $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
-
+        ACache.get(this).put("password",password,TIME_DAY*7);
 
         _loginButton.setEnabled(true);
         finish();
