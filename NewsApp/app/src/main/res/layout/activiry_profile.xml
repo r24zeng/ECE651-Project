@@ -48,7 +48,7 @@
             android:saveEnabled="false"
             android:hint="Edit New Gender" />
     </android.support.design.widget.TextInputLayout>
-    
+
     <!-- faculty -->
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
