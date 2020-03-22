@@ -8,12 +8,6 @@
     android:paddingLeft="24dp"
     android:paddingRight="24dp">
 
-    <ImageView android:src="@drawable/logo"
-        android:layout_width="wrap_content"
-        android:layout_height="72dp"
-        android:layout_marginBottom="24dp"
-        android:layout_gravity="center_horizontal" />
-
     <!-- Name Label -->
     <EditText android:id="@+id/edit_name"
         android:layout_width="match_parent"
@@ -24,7 +18,6 @@
         android:hint="Edit New Name"
         android:inputType="textPersonName"
         />
-
 
     <!-- username Label -->
     <android.support.design.widget.TextInputLayout
@@ -42,8 +35,6 @@
 
     </android.support.design.widget.TextInputLayout>
 
-
-
     <!--  gender Label -->
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
@@ -57,8 +48,7 @@
             android:saveEnabled="false"
             android:hint="Edit New Gender" />
     </android.support.design.widget.TextInputLayout>
-
-
+    
     <!-- faculty -->
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"

@@ -24,7 +24,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.myView
         this.attribute = attribute;
     }
 
-
     @NonNull
     @Override
     public RecyclerAdapter.myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
