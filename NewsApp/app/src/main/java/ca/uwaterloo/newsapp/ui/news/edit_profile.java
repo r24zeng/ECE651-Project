@@ -29,7 +29,7 @@ import java.io.IOException;
 import static ca.uwaterloo.newsapp.utils.ACache.TIME_DAY;
 
 
-public class edit_profile extends AppCompatActivity {
+public class Edit_Profile extends AppCompatActivity {
     private static final String TAG = "EditProfile";
     JSONObject object;
     EditText _edit_name;
@@ -122,7 +122,7 @@ public class edit_profile extends AppCompatActivity {
         Log.d(TAG,"start patch new account information");
         _btn_saveEdit.setEnabled(false);
 
-        final ProgressDialog progressDialog = new ProgressDialog(edit_profile.this,
+        final ProgressDialog progressDialog = new ProgressDialog(Edit_Profile.this,
                 R.style.AppTheme_Dark_Dialog);
         progressDialog.setIndeterminate(true);
         progressDialog.setMessage("Change Account Information...");
@@ -186,23 +186,5 @@ public class edit_profile extends AppCompatActivity {
         Toast.makeText(getBaseContext(), "fail to submit", Toast.LENGTH_LONG).show();
         _btn_saveEdit.setEnabled(true);
     }
-
-
-//    @Override
-//    public void onResume() {
-//        super.onResume();
-//
-//        onCreate(null);
-//    }
-
-
-
-
-
-
-
-
-
-
 
 }

@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 
 import ca.uwaterloo.newsapp.R;
 
-public class fg_headline extends Fragment {
+public class Fg_Headline extends Fragment {
 
     @Nullable
     @Override

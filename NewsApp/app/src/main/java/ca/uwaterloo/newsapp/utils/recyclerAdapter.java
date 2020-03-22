@@ -13,12 +13,12 @@ import java.util.List;
 import ca.uwaterloo.newsapp.Entity.User;
 import ca.uwaterloo.newsapp.R;
 
-public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.myViewHolder>{
+public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder>{
     private Context context;
     private List<String> attribute;
     private User user;
 
-    public recyclerAdapter(List<String> attribute, Context context, User u ){
+    public RecyclerAdapter(List<String> attribute, Context context, User u ){
         this.context = context;
         this.user = u;
         this.attribute = attribute;
@@ -27,13 +27,13 @@ public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.myView
 
     @NonNull
     @Override
-    public recyclerAdapter.myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RecyclerAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = View.inflate(context, R.layout.fg_account_item, null);
-        return new myViewHolder(itemView);
+        return new MyViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull recyclerAdapter.myViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerAdapter.MyViewHolder holder, int position) {
 //        String attr = holder._user_attr.getText().toString();
         String attrinfo = attribute.get(position);
         TextView textview = holder._user_attrinfo;
@@ -48,7 +48,6 @@ public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.myView
         }else {
             attr.setText("   fault to show account infomation");
         }
-//        System.out.println("****************"+ attr +"**********");
     }
 
     @Override
@@ -56,12 +55,12 @@ public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.myView
         return attribute.size();
     }
 
-    class myViewHolder extends RecyclerView.ViewHolder{
+    class MyViewHolder extends RecyclerView.ViewHolder{
         private TextView _user_attr;
         private TextView _user_attrinfo;
 
 
-        public myViewHolder(View itemView) {
+        public MyViewHolder(View itemView) {
             super(itemView);
             _user_attr = (TextView) itemView.findViewById(R.id.user_attr);
             _user_attrinfo = (TextView)itemView.findViewById(R.id.user_attrinfo);

@@ -29,10 +29,10 @@ public class NewsActivity  extends AppCompatActivity {
 
 
         List<Fragment> fragments = new ArrayList<>();
-        fragments.add(new fg_headline());
-        fragments.add(new fg_search());
-        fragments.add(new fg_favorite());
-        fragments.add(new fg_account());
+        fragments.add(new Fg_Headline());
+        fragments.add(new Fg_Search());
+        fragments.add(new Fg_Fevorite());
+        fragments.add(new Fg_Account());
 
         FragmentAdapter adapter = new FragmentAdapter(fragments, getSupportFragmentManager());
         viewPager.setAdapter(adapter);

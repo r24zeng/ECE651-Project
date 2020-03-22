@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 
 import ca.uwaterloo.newsapp.R;
 
-public class fg_favorite extends Fragment {
+public class Fg_Fevorite extends Fragment {
 
     @Nullable
     @Override

@@ -23,23 +23,20 @@ import ca.uwaterloo.newsapp.R;
 import ca.uwaterloo.newsapp.utils.ACache;
 import ca.uwaterloo.newsapp.utils.HttpUtils;
 import ca.uwaterloo.newsapp.utils.JsonUtil;
-import ca.uwaterloo.newsapp.utils.recyclerAdapter;
+import ca.uwaterloo.newsapp.utils.RecyclerAdapter;
 
 
-public class fg_account extends Fragment {
+public class Fg_Account extends Fragment {
     private static String TAG = "accountFragment";
     View view;
     String password;
     public RecyclerView _recycler;
-    recyclerAdapter _recyclerAdapter;
+    RecyclerAdapter _recyclerAdapter;
     TextView _username;
     TextView _usergender;
     User user;
     List<String> _userAttr =  new ArrayList<String>();
     Button btn_edit;
-
-
-
 
     @Nullable
     @Override
@@ -83,7 +80,7 @@ public class fg_account extends Fragment {
     private void initRecyclerView(){
         _recycler = (RecyclerView)view.findViewById(R.id.recycler);
         _userAttr = getUserAttr(user);
-        _recyclerAdapter = new recyclerAdapter(_userAttr, getActivity(), user);
+        _recyclerAdapter = new RecyclerAdapter(_userAttr, getActivity(), user);
         _recycler.setAdapter(_recyclerAdapter);
         _recycler.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL,false));
         _recycler.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL));
@@ -100,7 +97,7 @@ public class fg_account extends Fragment {
         @Override
         public void onClick(View view) {
             Intent intent = new Intent();
-            intent.setClass(getActivity(),edit_profile.class);
+            intent.setClass(getActivity(),Edit_Profile.class);
             try {
                 intent.putExtra("userdata", JsonUtil.toJson(user));
                 getActivity().startActivity(intent);

@@ -15,7 +15,7 @@ import android.widget.SearchView;
 
 import ca.uwaterloo.newsapp.R;
 
-public class fg_search extends Fragment {
+public class Fg_Search extends Fragment {
     private String[] mStrs = {"aaa", "bbb", "ccc", "airsaid"};
     private SearchView mSearchView;
     private ListView mListView;
@@ -30,15 +30,12 @@ public class fg_search extends Fragment {
         mListView.setAdapter(new ArrayAdapter<String>(this.getContext(), android.R.layout.simple_list_item_1, mStrs));
         mListView.setTextFilterEnabled(true);
 
-        // 设置搜索文本监听
         mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            // 当点击搜索按钮时触发该方法
             @Override
             public boolean onQueryTextSubmit(String query) {
                 return false;
             }
 
-            // 当搜索内容改变时触发该方法
             @Override
             public boolean onQueryTextChange(String newText) {
                 if (!TextUtils.isEmpty(newText)){
