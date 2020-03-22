@@ -23,7 +23,6 @@ import ca.uwaterloo.newsapp.R;
 import ca.uwaterloo.newsapp.utils.ACache;
 import ca.uwaterloo.newsapp.utils.HttpUtils;
 import ca.uwaterloo.newsapp.utils.JsonUtil;
-import ca.uwaterloo.newsapp.utils.RecyclerAdapter;
 
 
 public class AccountFragment extends Fragment {
