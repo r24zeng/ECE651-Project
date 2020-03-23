@@ -6,6 +6,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 import org.json.JSONArray;
@@ -14,9 +15,12 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
+import ca.uwaterloo.newsapp.Entity.Category;
 import ca.uwaterloo.newsapp.Entity.News;
 import ca.uwaterloo.newsapp.Entity.User;
 import ca.uwaterloo.newsapp.R;
@@ -56,17 +60,74 @@ public class HttpUtils {
         return null;
     }
 
-    public List<News> getNews(String url) {
-        List<News> result = new ArrayList<>();
+    public List<Category> getNewsCategory(String url){
+        List<Category> res = new ArrayList<>();
         Response response = null;
-//        HttpUrl httpUrl = new HttpUrl.Builder()
-//                .scheme("http")
-//                .host(host)
-//                .addPathSegment(url)
-//                .addQueryParameter("page","1")
-//                .build();
         Request request = new Request.Builder()
                 .url(host+url)
+                .build();
+        Call call = client.newCall(request);
+        try {
+            response = call.execute();
+            if (response.code() == HttpCode.SUCCESS) {
+                String string = response.body().string();
+                JsonArray array = new JsonParser().parse(string).getAsJsonObject().getAsJsonArray("news_source_list");
+                for(JsonElement obj : array ){
+                    JsonObject object = obj.getAsJsonObject();
+                    JsonArray source = object.getAsJsonArray("sources");
+                    for (JsonElement s:source){
+                        Category category = gson.fromJson( s , Category.class);
+                        res.add(category);
+                    }
+                }
+            }
+        } catch (IOException e) {
+            Log.d("get", "call execute failed", e);
+        } finally {
+            if (response != null) {
+                response.body().close();
+            }
+        }
+        return res;
+    }
+
+    public List<News> getNewsbyUser(String url,int page) {
+        List<News> result = new ArrayList<>();
+        Response response = null;
+        HttpUrl.Builder urlBuilder = HttpUrl.parse(host+url).newBuilder();
+        urlBuilder.addQueryParameter("page", String.valueOf(page));
+        String urls = urlBuilder.build().toString();
+        Request request = new Request.Builder()
+                .url(urls)
+                .build();
+        Call call = client.newCall(request);
+        try {
+            response = call.execute();
+            if (response.code() == HttpCode.SUCCESS) {
+                String string = response.body().string();
+                JsonArray array = new JsonParser().parse(string).getAsJsonObject().getAsJsonArray("news");
+                for(JsonElement obj : array ){
+                    News news = gson.fromJson( obj , News.class);
+                    result.add(news);
+                }
+            }
+        } catch (IOException e) {
+            Log.d("get", "call execute failed", e);
+        } finally {
+            if (response != null) {
+                response.body().close();
+            }
+        }
+        return result;
+    }
+    public List<News> getNews(String url,int page) {
+        List<News> result = new ArrayList<>();
+        HttpUrl.Builder urlBuilder = HttpUrl.parse(host+url).newBuilder();
+        urlBuilder.addQueryParameter("page", String.valueOf(page));
+        String urls = urlBuilder.build().toString();
+        Response response = null;
+        Request request = new Request.Builder()
+                .url(urls)
                 .build();
         Call call = client.newCall(request);
         try {
@@ -115,6 +176,31 @@ public class HttpUtils {
                     Log.d("get", "convert json failed", e);
                 }
 
+            }
+        } catch (IOException e) {
+            Log.d("get", "call execute failed", e);
+        } finally {
+            if (response != null) {
+                response.body().close();
+            }
+        }
+        return result;
+    }
+
+    public User getUser2(String url, String token) {
+        User result=null;
+        Response response = null;
+        Request request = new Request.Builder()
+                .url(host + url)
+                .headers(SetHeaders(token))
+                .build();
+        Call call = client.newCall(request);
+        try {
+            response = call.execute();
+            if (response.code() == HttpCode.SUCCESS) {
+                String string = response.body().string();
+                JsonObject object = new JsonParser().parse(string).getAsJsonObject();
+                result = gson.fromJson(object,User.class);
             }
         } catch (IOException e) {
             Log.d("get", "call execute failed", e);

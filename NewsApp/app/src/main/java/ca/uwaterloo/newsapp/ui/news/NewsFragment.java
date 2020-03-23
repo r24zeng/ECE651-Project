@@ -18,7 +18,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -27,6 +26,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ca.uwaterloo.newsapp.R;
+import ca.uwaterloo.newsapp.helper.NewsBeanLocalData;
+import ca.uwaterloo.newsapp.utils.ACache;
 
 import static ca.uwaterloo.newsapp.helper.NewsBeanLocalData.CATEGORIES;
 import static ca.uwaterloo.newsapp.helper.NewsBeanLocalData.CATIDS;
@@ -34,6 +35,7 @@ import static ca.uwaterloo.newsapp.helper.NewsBeanLocalData.DATA_BY_CATEGORY;
 
 //每个tab下的碎片Fragment
 public class NewsFragment extends Fragment {
+    int page = 0;
     private TabLayout tabLayout;
     //新闻列表
     private ListView newsListView;
@@ -51,6 +53,9 @@ public class NewsFragment extends Fragment {
     private FloatingActionButton fab;
 
     private static final Gson gson = new Gson();
+
+    private static String token;
+    private static int id;
 
     //添加此注解的原理：https://blog.csdn.net/androidsj/article/details/79865091
     @SuppressLint("HandlerLeak")
@@ -76,14 +81,17 @@ public class NewsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        token = ACache.get(this.getActivity()).getAsString("token");
+        id = (int) (ACache.get(this.getActivity()).getAsObject("id"));
+        NewsBeanLocalData.loadUserInfo(id, token);
+        NewsBeanLocalData.refresh();
         //加载新闻列表
         View view = inflater.inflate(R.layout.news_list, container, false);
-        // TODO：加载 tab
         tabLayout = view.findViewById(R.id.tabLayout);
+        tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         for (String tabName : CATEGORIES) {
             tabLayout.addTab(tabLayout.newTab().setText(tabName));
         }
-
         //获取每个实例之后，返回当前视图
         newsListView = (ListView) view.findViewById(R.id.newsListView);
         //tv = (TextView) view.findViewById(R.id.text_response);
@@ -104,14 +112,7 @@ public class NewsFragment extends Fragment {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 // TODO
-                if ("University".equals(tab.getText())) {
-                    refreshData(1);
-                }else if ("Faculties".equals(tab.getText())){
-                    refreshData(2);
-                }else {
-                    refreshData(5);
-                }
-
+                refreshData(NewsBeanLocalData.catNameToId.get(tab.getText()));
             }
 
             @Override
@@ -138,7 +139,6 @@ public class NewsFragment extends Fragment {
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                // TODO
                 threadLoaderData(CATIDS.get(tabLayout.getSelectedTabPosition()));
             }
         });
@@ -152,8 +152,6 @@ public class NewsFragment extends Fragment {
                 //获取点击条目的路径，传值显示WebView页面
                 String url = contentItems.get(position).getUrl();
                 Log.d("当前新闻子项的连接是：", "onItemClick: " + url);
-                String uniquekey = contentItems.get(position).getUniquekey();
-                String newsTitle = contentItems.get(position).getTitle();
                 Intent intent = new Intent(getActivity(), WebActivity.class);
                 intent.putExtra("pageUrl", url);
                 startActivity(intent);
@@ -192,14 +190,8 @@ public class NewsFragment extends Fragment {
         }).start();
     }
 
-    //加载数据，实现从本地数据库中读取数据刷新到newsListView的适配器中
     private void refreshData(final Integer category) {
-        refreshData(category, 0, 10);
-    }
-
-    private void refreshData(final Integer category, int skip, int limit) {
-//        this.skip = skip;
-//        this.limit = limit;
+        List<NewsBean.ResultBean.DataBean> dataBeans = DATA_BY_CATEGORY.get(category);
         contentItems = DATA_BY_CATEGORY.get(category);
         notifyNewsChange(contentItems);
     }
@@ -216,7 +208,8 @@ public class NewsFragment extends Fragment {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                return gson.toJson(DATA_BY_CATEGORY.get(category), new TypeToken<List<NewsBean.ResultBean.DataBean>>(){}.getType());
+                return gson.toJson(DATA_BY_CATEGORY.get(category), new TypeToken<List<NewsBean.ResultBean.DataBean>>() {
+                }.getType());
             }
 
             // TODO:
@@ -226,7 +219,8 @@ public class NewsFragment extends Fragment {
                     public void run() {
                         Message msg = newsHandler.obtainMessage();
                         msg.what = UPNEWS_INSERT;
-                        msg.obj = gson.fromJson(result, new TypeToken<List<NewsBean.ResultBean.DataBean>>(){}.getType());
+                        msg.obj = gson.fromJson(result, new TypeToken<List<NewsBean.ResultBean.DataBean>>() {
+                        }.getType());
                         // 让工作线程的数据回到主线程
                         newsHandler.sendMessage(msg);
                     }
