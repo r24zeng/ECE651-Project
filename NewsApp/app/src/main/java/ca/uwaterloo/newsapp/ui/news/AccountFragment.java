@@ -34,7 +34,7 @@ public class AccountFragment extends Fragment {
     TextView _username;
     TextView _usergender;
     User user;
-    List<String> _userAttr =  new ArrayList<String>();
+    List<String> _userAttr ;
     Button btn_edit;
 
 
@@ -86,7 +86,6 @@ public class AccountFragment extends Fragment {
         _recycler.setAdapter(_recyclerAdapter);
         _recycler.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL,false));
         _recycler.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL));
-//        _recyclerAdapter.setOnItemClick
     }
 
     private void btn_click(){

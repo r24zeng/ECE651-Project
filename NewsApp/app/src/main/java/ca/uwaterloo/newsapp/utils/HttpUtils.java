@@ -104,13 +104,23 @@ public class HttpUtils {
                 JSONObject object = null;
                 try {
                     object = new JSONObject(string);
-                    System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
                     System.out.println(object);
                     result.setUsername( object.getString("username"));
-                    result.setDepartment( object.getString("department"));
-                    result.setFaculty(object.getString("faculty"));
-                    result.setGender(object.getInt("gender"));
-                    result.setName(object.getString("name"));
+                    if(!object.isNull("department") ){
+                        result.setDepartment( object.getString("department"));
+                    }
+                    if(!object.isNull("faculty")){
+                        result.setFaculty(object.getString("faculty"));
+                    }
+                    if(!object.isNull("gender") ){
+                        result.setGender(object.getInt("gender"));
+                    }
+                    if(!object.isNull("name")){
+                        result.setName(object.getString("name"));
+                    }
+
+                    System.out.println(result.getName());
+                    result.setFollowing(object.getString("following"));
                 } catch (JSONException e) {
                     Log.d("get", "convert json failed", e);
                 }
