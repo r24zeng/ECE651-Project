@@ -33,8 +33,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.myView
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerAdapter.myViewHolder holder, int position) {
-//        String attr = holder._user_attr.getText().toString();
         String attrinfo = attribute.get(position);
+        System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"+ attrinfo);
         TextView textview = holder._user_attrinfo;
         textview.setText(attrinfo);
         TextView attr = holder._user_attr;
@@ -47,7 +47,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.myView
         }else {
             attr.setText("   fault to show account infomation");
         }
-//        System.out.println("****************"+ attr +"**********");
     }
 
     @Override
