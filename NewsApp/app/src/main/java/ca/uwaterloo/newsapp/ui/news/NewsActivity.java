@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
 import ca.uwaterloo.newsapp.R;
+import ca.uwaterloo.newsapp.helper.NewsBeanLocalData;
+import ca.uwaterloo.newsapp.utils.ACache;
 
 public class NewsActivity  extends AppCompatActivity {
     BottomNavigationView bnView;
@@ -66,8 +68,6 @@ public class NewsActivity  extends AppCompatActivity {
 
             }
         });
-
-
     }
     @Override
     protected void onStart() {
