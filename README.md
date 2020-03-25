@@ -4,6 +4,13 @@
 Tools:
 + Front-end: Android Studio + Java + JavaScript
 + Back-end: Flask + Python + SQLAlchemy + RESTful style
++ Test: Postman
++ Version control: Github
+
+Team members:
++ Project manager: Run Zeng
++ Front-end: Yuxin Fan, Quanyu Wang
++ Back-end: Zijian Liu, Run Zeng(unit test)
 
 ### WatNews purpose and users
 WatNews is a front and back separated Android app, which gathers all news from University of Waterloo websites. Users are students, professors and other stuffs of University of Waterloo and who is care about the news within UW.
