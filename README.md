@@ -31,10 +31,10 @@ WatNews is an Android app, which gathers all news from University of Waterloo we
 ### Front-end unit tests
 
 ### Back-end unit tests 
-[full unit test link](https://github.com/faushine/ECE651-Project-Back-end/blob/master/test_newsapp.py)
+[full unit test link](https://github.com/faushine/ECE651-Project-Back-end/blob/master/test_newsapp.py) <br>
 Statement coverage: 89% <br>
 Branch coverage: 88% <br>
 *Only craws related haven't been covered because it's dynamic.*
 
-### Systemtest screenshots
+### System test screenshots
 
