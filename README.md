@@ -13,7 +13,7 @@ Team members:
 + Back-end: Zijian Liu, Run Zeng(unit test)
 
 ### WatNews purpose and users
-WatNews is a front and back separated Android app, which gathers all news from University of Waterloo websites. Users are students, professors and other stuffs of University of Waterloo and who is care about the news within UW.
+This is a front and back separated Android app, which gathers all news from University of Waterloo websites. Users are students, professors and other stuffs of University of Waterloo and who is care about the news within UW.
 
 ### Requiremnts 
 + Allow users to register and login(after one hour the session will expire)
