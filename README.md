@@ -1,9 +1,12 @@
 # ECE651-Project
 [Front-end source code link](https://github.com/faushine/ECE651-Project/edit/master/README.md) <br>
-[Back-end source code link](https://github.com/faushine/ECE651-Project-Back-end)
+[Back-end source code link](https://github.com/faushine/ECE651-Project-Back-end) <br>
+Tools:
++ Front-end: Android Studio + Java + JavaScript
++ Back-end: Flask + Python + SQLAlchemy + RESTful style
 
 ### WatNews purpose and users
-WatNews is an Android app, which gathers all news from University of Waterloo websites. Users are students, professors and other stuffs of University of Waterloo.
+WatNews is an front and back separated Android app, which gathers all news from University of Waterloo websites. Users are students, professors and other stuffs of University of Waterloo and who is care about the news within UW.
 
 ### Requiremnts 
 + Allow users to register and login(after one hour the session will expire)
