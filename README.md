@@ -37,7 +37,7 @@ WatNews is a front and back separated Android app, which gathers all news from U
 [Completed unit test link](https://github.com/faushine/ECE651-Project-Back-end/blob/master/test_newsapp.py) <br>
 Statement coverage: 89% <br>
 Branch coverage: 88% <br>
-<span style="color:grey;">*Only craws related haven't been covered because it's dynamic.*</span> 
+*Only craws related haven't been covered because it's dynamic.*
 
 ### System test screenshots
 
