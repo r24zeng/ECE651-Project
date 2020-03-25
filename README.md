@@ -6,7 +6,7 @@ Tools:
 + Back-end: Flask + Python + SQLAlchemy + RESTful style
 
 ### WatNews purpose and users
-WatNews is an front and back separated Android app, which gathers all news from University of Waterloo websites. Users are students, professors and other stuffs of University of Waterloo and who is care about the news within UW.
+WatNews is a front and back separated Android app, which gathers all news from University of Waterloo websites. Users are students, professors and other stuffs of University of Waterloo and who is care about the news within UW.
 
 ### Requiremnts 
 + Allow users to register and login(after one hour the session will expire)
@@ -37,7 +37,7 @@ WatNews is an front and back separated Android app, which gathers all news from 
 [Completed unit test link](https://github.com/faushine/ECE651-Project-Back-end/blob/master/test_newsapp.py) <br>
 Statement coverage: 89% <br>
 Branch coverage: 88% <br>
-*Only craws related haven't been covered because it's dynamic.*
+<span style="color:grey;">*Only craws related haven't been covered because it's dynamic.*</span> 
 
 ### System test screenshots
 
