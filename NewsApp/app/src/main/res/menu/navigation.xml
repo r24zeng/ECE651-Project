@@ -15,7 +15,6 @@
         app:showAsAction="always|withText"/>
 
 
-
     <item
         android:id="@+id/navigation_favourite"
         android:icon="@drawable/ic_favorite_black_24dp"
