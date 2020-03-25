@@ -91,11 +91,12 @@ public class HttpUtils {
         return res;
     }
 
-    public List<News> getNewsbyUser(String url,int page) {
+    public List<News> getNewsbyUser(String url,int page, String token) {
         List<News> result = new ArrayList<>();
         Response response = null;
         HttpUrl.Builder urlBuilder = HttpUrl.parse(host+url).newBuilder();
         urlBuilder.addQueryParameter("page", String.valueOf(page));
+        urlBuilder.addQueryParameter("token", String.valueOf(token));
         String urls = urlBuilder.build().toString();
         Request request = new Request.Builder()
                 .url(urls)
