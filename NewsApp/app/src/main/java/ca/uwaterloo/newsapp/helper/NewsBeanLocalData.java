@@ -1,5 +1,6 @@
 package ca.uwaterloo.newsapp.helper;
 
+import android.arch.persistence.room.util.StringUtil;
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -35,18 +36,21 @@ public class NewsBeanLocalData {
     }
 
     public static void loadUserInfo(int id, String token){
-        User user = httpUtils.getUser2("/api/v1/users/"+id,token);
-        String[] strings = user.getFollowing().split(",");
         CATEGORIES.clear();
         CATIDS.clear();
         CATEGORIES.add("All");
         CATIDS.add(0);
-        for (String s:strings){
-            CATEGORIES.add(idToCatName.get(Integer.valueOf(s)));
-            CATIDS.add(Integer.valueOf(s));
+        User user = httpUtils.getUser2("/api/v1/users/"+id,token);
+        String following = user.getFollowing();
+        if (following!=null && !following.isEmpty()){
+            String[] strings = following.split(",");
+            for (String s:strings){
+                CATEGORIES.add(idToCatName.get(Integer.valueOf(s)));
+                CATIDS.add(Integer.valueOf(s));
+            }
         }
-        List<News> newsList = httpUtils.getNewsbyUser("/api/v1/news",1);
-        newsList.addAll(httpUtils.getNewsbyUser("/api/v1/news",2));
+        List<News> newsList = httpUtils.getNewsbyUser("/api/v1/news",1,token);
+        newsList.addAll(httpUtils.getNewsbyUser("/api/v1/news",2,token));
         List<NewsBean.ResultBean.DataBean> list = new ArrayList<>();
         for (News news : newsList) {
             NewsBean.ResultBean.DataBean dataBean = new NewsBean.ResultBean.DataBean();
