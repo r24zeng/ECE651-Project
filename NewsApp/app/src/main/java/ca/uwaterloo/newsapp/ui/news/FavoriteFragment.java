@@ -51,11 +51,14 @@ public class FavoriteFragment extends Fragment{
         favorite_copy.clear();
 
         user = httpUtils.getUser2("/api/v1/users/"+id,token);
-        String[] strings = user.getFollowing().split(",");
-        for (String s:strings){
+        if(user.getFollowing() != null){
+            String[] strings = user.getFollowing().split(",");
+            for (String s:strings){
 //            System.out.println(TAG + s + "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% "+ mStrs.get(Integer.valueOf(s)));
-            favorite_copy.add(mStrs.get(Integer.valueOf(s)));
+                favorite_copy.add(mStrs.get(Integer.valueOf(s)));
+            }
         }
+
         _recycler = (RecyclerView)view.findViewById(R.id.recyclerSearch);
         _recyclerAdapter = new RecycleFavoriteAdapter(favorite_copy, getActivity(),1);
         _recycler.setAdapter(_recyclerAdapter);

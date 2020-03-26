@@ -170,15 +170,30 @@ public class HttpUtils {
                     result.setUsername( object.getString("username"));
                     if(!object.isNull("department") ){
                         result.setDepartment( object.getString("department"));
+                    }else {
+                        result.setDepartment( "");
                     }
+
+                    if(!object.isNull("following") ){
+                        result.setFollowing( object.getString("following"));
+                    }else {
+                        result.setFollowing("");
+                    }
+
                     if(!object.isNull("faculty")){
                         result.setFaculty(object.getString("faculty"));
+                    }else{
+                        result.setFaculty("");
                     }
+
                     if(!object.isNull("gender") ){
                         result.setGender(object.getInt("gender"));
                     }
+
                     if(!object.isNull("name")){
                         result.setName(object.getString("name"));
+                    }else{
+                        result.setName("");
                     }
 
                     System.out.println(result.getName());

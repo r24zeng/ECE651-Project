@@ -71,15 +71,19 @@ public class RecyclerSearchAdapter extends RecyclerView.Adapter<RecyclerSearchAd
                             String[] strings = newU.getFollowing().split(",");
                             int ifExists = 0;
                             for(int i = 0; i< strings.length; i++){
-                                if(category.getId() == i){
+                                if(String.valueOf(category.getId()).equals(strings[i]) ){
                                     ifExists = 1;
                                     break;
                                 }
                             }
-                            if(ifExists ==0){
+                            if(ifExists == 0  ){
                                 newU.setFollowing(newU.getFollowing() + "," + String.valueOf(category.getId()));
                             }
 
+                            if(newU.getFollowing().contains("n")){
+                                newU.setFollowing(newU.getFollowing().substring(5));
+                            }
+                            
                             try {
                                 ResponseBody response = new HttpUtils().patch("/api/v1/users/"+id, JsonUtil.toJson(newU),token);
                             } catch (IOException e) {
