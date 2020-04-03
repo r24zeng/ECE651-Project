@@ -47,12 +47,12 @@ Branch coverage: 88% <br>
 *Only craws related haven't been covered because it's dynamic.*
 
 ### System test screenshots
-![SignUp: when a user is the first time to use WatNews app, he or she can create a new account.](https://github.com/faushine/ECE651-Project/image/signup.jpg)
-![Login: The user can use their username and password to login WatNews app.](https://github.com/faushine/ECE651-Project/image/login.jpg)
-![News: The user can view all following news source or see the newest news from the website.](https://github.com/faushine/ECE651-Project/image/news.jpg)
-![Search: The user can search their favorite categories and add to favorite](https://github.com/faushine/ECE651-Project/image/search.jpg)
-![Favorite: Show this user's favorite categories](https://github.com/faushine/ECE651-Project/image/following.jpg)
-![Account Information: show this user's account information, such as department, faculty, gender and so on.](https://github.com/faushine/ECE651-Project/image/account.jpg)
-![Edit: The user can edit his or her profile.](https://github.com/faushine/ECE651-Project/image/edit.jpg)
+![SignUp: when a user is the first time to use WatNews app, he or she can create a new account.](https://github.com/faushine/ECE651-Project/raw/master/image/signup.jpg)
+![Login: The user can use their username and password to login WatNews app.](https://github.com/faushine/ECE651-Project/raw/master/image/login.jpg)
+![News: The user can view all following news source or see the newest news from the website.](https://github.com/faushine/ECE651-Project/raw/master/image/news.jpg)
+![Search: The user can search their favorite categories and add to favorite](https://github.com/faushine/ECE651-Project/raw/master/image/search.jpg)
+![Favorite: Show this user's favorite categories](https://github.com/faushine/ECE651-Project/raw/master/image/following.jpg)
+![Account Information: show this user's account information, such as department, faculty, gender and so on.](https://github.com/faushine/ECE651-Project/raw/master/image/account.jpg)
+![Edit: The user can edit his or her profile.](https://github.com/faushine/ECE651-Project/raw/master/image/edit.jpg)
 
 
