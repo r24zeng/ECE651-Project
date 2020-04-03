@@ -47,12 +47,19 @@ Branch coverage: 88% <br>
 *Only craws related haven't been covered because it's dynamic.*
 
 ### System test screenshots
-![SignUp: when a user is the first time to use WatNews app, he or she can create a new account.](https://github.com/faushine/ECE651-Project/raw/master/image/signup.jpg){:zoom="50%"}
-![Login: The user can use their username and password to login WatNews app.](https://github.com/faushine/ECE651-Project/raw/master/image/login.jpg){:zoom="50%"}
-![News: The user can view all following news source or see the newest news from the website.](https://github.com/faushine/ECE651-Project/raw/master/image/news.jpg){:zoom="50%"}
-![Search: The user can search their favorite categories and add to favorite](https://github.com/faushine/ECE651-Project/raw/master/image/search.jpg){:zoom="50%"}
-![Favorite: Show this user's favorite categories](https://github.com/faushine/ECE651-Project/raw/master/image/following.jpg){:zoom="50%"}
-![Account Information: show this user's account information, such as department, faculty, gender and so on.](https://github.com/faushine/ECE651-Project/raw/master/image/account.jpg){:zoom="50%"}
-![Edit: The user can edit his or her profile.](https://github.com/faushine/ECE651-Project/raw/master/image/edit.jpg){:zoom="50%"}
++ SignUp: when a user is the first time to use WatNews app, he or she can create a new account.
+<img src="https://github.com/faushine/ECE651-Project/raw/master/image/signup.jpg" width = "30%" height="30%" />
++ Login: The user can use their username and password to login WatNews app.
+<img src="https://github.com/faushine/ECE651-Project/raw/master/image/login.jpg" width = "30%" height="30%" />
++ News: The user can view all following news source or see the newest news from the website.
+<img src="https://github.com/faushine/ECE651-Project/raw/master/image/news.jpg" width = "30%" height="30%" />
++ Search: The user can search their favorite categories and add to favorite.
+<img src="https://github.com/faushine/ECE651-Project/raw/master/image/search.jpg" width = "30%" height="30%" />
++ Favorite: Show this user's favorite categories.
+<img src="https://github.com/faushine/ECE651-Project/raw/master/image/following.jpg" width = "30%" height="30%" />
++ Account Information: show this user's account information, such as department, faculty, gender and so on.
+<img src="https://github.com/faushine/ECE651-Project/raw/master/image/account.jpg" width = "30%" height="30%" />
++ Edit: The user can edit his or her profile.
+<img src="https://github.com/faushine/ECE651-Project/raw/master/image/edit.jpg" width = "30%" height="30%" />
 
 
