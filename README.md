@@ -40,6 +40,12 @@ This is a front and back separated Android app, which gathers all news from Univ
 
 ### Front-end unit tests
 
++ Unit test: using Junit framework to validate the app's behavior one class at a time.
+
++ Integrated test: test modules to validate either interactions between levels of the stack within a module, or interactions between related modules.
+
++ System test: end-to-end tests that validate user journeys spanning multiple modules of the app.
+
 ### Back-end unit tests 
 [Completed unit test link](https://github.com/faushine/ECE651-Project-Back-end/blob/master/test_newsapp.py) <br>
 Statement coverage: 89% <br>
