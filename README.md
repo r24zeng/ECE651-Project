@@ -36,9 +36,9 @@ This is a front and back separated Android app, which gathers all news from Univ
   + Users authorioty 
   + Support basic front-end functions using RESTful API
   + Error codes
-  + News craws within University of Waterloo
+  + Crawl news from University of Waterloo campus websites
 
-### unit tests 
+### Unit tests 
 Front-end: using Junit framework to validate the app's behavior one class at a time.
 
 Back-end:
