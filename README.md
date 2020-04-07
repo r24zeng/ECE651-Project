@@ -39,9 +39,6 @@ This is a front and back separated Android app, which gathers all news from Univ
   + Crawl news from University of Waterloo campus websites
 
 ### Unit tests 
-Front-end: using Junit framework to validate the app's behavior one class at a time.
-
-Back-end:
 [Completed unit test link](https://github.com/faushine/ECE651-Project-Back-end/blob/master/test_newsapp.py) <br>
 Statement coverage: 89% <br>
 Branch coverage: 88% <br>
