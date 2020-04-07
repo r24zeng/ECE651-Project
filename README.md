@@ -43,7 +43,7 @@ This is a front and back separated Android app, which gathers all news from Univ
 Statement coverage: 89% <br>
 Branch coverage: 88% <br>
 
-### System test screenshots
+### Integrated & System tests
 + SignUp: when a user is the first time to use WatNews app, he or she can create a new account.
 <img src="https://github.com/faushine/ECE651-Project/raw/master/image/signup.jpg" width = "30%" height="30%" />
 + Login: The user can use their username and password to login WatNews app.
