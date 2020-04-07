@@ -42,7 +42,6 @@ This is a front and back separated Android app, which gathers all news from Univ
 [Completed unit test link](https://github.com/faushine/ECE651-Project-Back-end/blob/master/test_newsapp.py) <br>
 Statement coverage: 89% <br>
 Branch coverage: 88% <br>
-*Only craws related haven't been covered because it's dynamic.*
 
 ### System test screenshots
 + SignUp: when a user is the first time to use WatNews app, he or she can create a new account.
