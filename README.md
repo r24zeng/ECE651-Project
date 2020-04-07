@@ -38,15 +38,10 @@ This is a front and back separated Android app, which gathers all news from Univ
   + Error codes
   + News craws within University of Waterloo
 
-### Front-end unit tests
+### unit tests 
+Front-end: using Junit framework to validate the app's behavior one class at a time.
 
-+ Unit test: using Junit framework to validate the app's behavior one class at a time.
-
-+ Integrated test: test modules to validate either interactions between levels of the stack within a module, or interactions between related modules.
-
-+ System test: end-to-end tests that validate user journeys spanning multiple modules of the app.
-
-### Back-end unit tests 
+Back-end:
 [Completed unit test link](https://github.com/faushine/ECE651-Project-Back-end/blob/master/test_newsapp.py) <br>
 Statement coverage: 89% <br>
 Branch coverage: 88% <br>
