@@ -1,4 +1,4 @@
-# ECE651-Project
+# ECE651-Project(WatNews App)
 [Front-end source code link](https://github.com/faushine/ECE651-Project) <br>
 [Back-end source code link](https://github.com/faushine/ECE651-Project-Back-end) <br>
 Tools:
