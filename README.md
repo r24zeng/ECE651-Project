@@ -4,7 +4,7 @@
 
 Team members:
 + Project manager: Run Zeng([Github](https://github.com/r24zeng))
-+ Front-end: Yuxin Fan([Github](https://github.com/faushine)), Quanyu Wang([github](https://github.com/QuanyuWANG96))
++ Front-end: Yuxin Fan([Github](https://github.com/faushine)), Quanyu Wang([Github](https://github.com/QuanyuWANG96))
 + Back-end: Zijian Liu([Github](https://github.com/graysonliu)), Run Zeng(unit test, [Github](https://github.com/r24zeng))
 
 Tools:
