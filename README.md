@@ -1,6 +1,6 @@
 # ECE651-Project(WatNews App)
 [Front-end source code link](https://github.com/faushine/ECE651-Project) <br>
-[Back-end source code link](https://github.com/faushine/ECE651-Project-Back-end) <br>
+[Back-end source code link](https://github.com/r24zeng/WatNews-App-back-end) <br>
 Tools:
 + Front-end: Android Studio + Java + JavaScript
 + Back-end: Flask + Python + SQLAlchemy + RESTful style
